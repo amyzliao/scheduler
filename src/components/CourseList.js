@@ -23,10 +23,18 @@ const TermButton = ({term, setTerm, checked}) => (
     </>
 );
 
+// `Change ${course.id} to ${meets}?`
+const scheduleChanged = (selected, courses) => (
+  selected.some(course => course !== courses[`${course.term.charAt(0)}${course.number}`])
+);
 
 const CourseList = ({ courses }) => {
     const [term, setTerm] = useState('Fall');
     const [selected, setSelected] = useState([]);
+
+    if (scheduleChanged(selected, courses)) {
+      setSelected([])
+    };
   
     const termCourses = Object.values(courses).filter(course => term === getCourseTerm(course));
     
@@ -44,7 +52,5 @@ const CourseList = ({ courses }) => {
       </>
     );
 };
-
-
 
 export default CourseList;

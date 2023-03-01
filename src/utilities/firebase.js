@@ -78,3 +78,8 @@ export const useData = (path, transform) => {
   
     return [data, loading, error];
   };
+
+// set and setData are asynchronous
+export const setData = (path, value) => (
+    set(ref(database, path), value)
+);
