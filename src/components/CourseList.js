@@ -36,7 +36,7 @@ const CourseList = ({ courses }) => {
         <div className="course-list">
         { 
           termCourses.map(course =>
-            <Course key={ course.id } course={ course }
+            <Course key={ course.number } course={ course }
               selected={selected} setSelected={ setSelected } 
             />) 
         }

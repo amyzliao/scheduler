@@ -5,9 +5,9 @@ const toggle = (x, lst) => (
 );
 
 const getCourseNumber = course => (
-    course.id.slice(1, 4)
+    course.number
+    //course.id.slice(1, 4)
 );
-
 
 const Course = ({ course, selected, setSelected }) => {
     const isSelected = selected.includes(course);

@@ -3,7 +3,9 @@ const days = ['M', 'Tu', 'W', 'Th', 'F'];
 export const terms = { F: 'Fall', W: 'Winter', S: 'Spring'};
 
 export const getCourseTerm = course => (
-  terms[course.id.charAt(0)]
+  course.term
+  //terms[course.term.charAt(0)]
+  //terms[course.id.charAt(0)]
 );
 
 const daysOverlap = (days1, days2) => ( 
